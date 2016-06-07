@@ -1,1 +1,9 @@
 <h2>PivotController#index</h2>
+<%= stylesheet_link_tag 'pivot', :plugin => 'pivot_table', :media => 'all' %>
+<%= javascript_include_tag 'pivot', :plugin => 'pivot_table', :media => 'all' %>
+<div id="output"></div>
+<script type="text/javascript">
+  $.getJSON("pivot/list.json", function(data) {
+    $("#output").pivotUI(data);
+  });
+</script>
